@@ -2,7 +2,6 @@
 
 import socket
 
-
 def connect(ipAddress):
     HOST = ipAddress 
     PORT = 8080  
