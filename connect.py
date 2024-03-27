@@ -10,12 +10,16 @@ def connect():
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.connect((HOST, PORT))
         while True:
+            data = s.recv(1024)
+            if data == "quit":
+                break
+            print(pickle.loads(data))
+            
             userChoice = input("enter coordinate?\n")
             if userChoice == "quit":
                 break
             s.sendall(pickle.dumps(tab))
-            data = s.recv(1024)
-            print(data.decode('utf-8'))
+            
             
 
     print(f"Received {data!r}")
