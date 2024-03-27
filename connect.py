@@ -12,3 +12,4 @@ def connect(ipAddress):
         data = s.recv(1024)
 
     print(f"Received {data!r}")
+    return {data}
