@@ -42,5 +42,11 @@ class game:
             return True
         else: 
             return False
+        
+    def updateTicTacToe(array, value):
+        for i in range(value[1] - 1):
+            for j in range(value[0] -1):
+                array[i][j] = value[0][1]
+                return array
 game = game()
 game.startGame()
